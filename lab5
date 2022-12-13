@@ -1,0 +1,130 @@
+#!/bin/sh
+
+# arithmetic operations on two numbers
+
+echo "enter num1: \c"
+read a
+
+echo "enter num2: \c"
+read b
+
+echo "operations: \n
+1.add \n
+2.difference \n
+3.product \n
+4.division \n
+enter your choice: \c"
+read choice
+
+case "$choice" in
+1)echo "addition: \c" 
+expr $a + $b ;;
+2)echo "subtraction: \c" 
+expr $a - $b ;;
+3)echo "multiplication: \c" 
+expr $a \* $b ;;
+4)echo "division: \c" 
+expr $a/$b ;;
+*)echo "invalid choice"
+esac
+#!/bin/sh
+
+#sum of even numbers upto n
+
+echo "enter n: \c"
+read n
+
+sum=0
+i=0
+while [ $i -le $n ]
+do
+ 
+sum=$((sum+i))
+i=$((i+2))
+done
+echo "Sum of even numbers: $sum"
+#!/bin/sh
+
+# program to compute the gross salary
+
+echo "enter the basic salary of the employee: \c"
+read salary
+
+#da=`expr $salary \* 10/100 | bc`  ----> not working
+#da=$(echo "$salary * 10/100" | bc)  -----> working
+da=$((salary*10/100))  # -----> working
+echo "$da"
+
+#br=`expr $salary \* 20/100 | bc`  ----> not working
+#br=$(echo "$salary * 20/100" | bc)  ----> working
+br=$((salary*20/100))  #  -----> working
+echo "$br"
+
+#gr=`expr $salary+$da+$br | bc`     ----> not working
+#gr=$(echo "$salary + $da + $br" | bc)  ----> working
+gr=$((salary+da+br))    # ----> working
+echo "gross salary: $gr"
+
+bmscecse@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/LAB5$ nano numprint1_5.sh
+bmscecse@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/LAB5$ sh numprint1_5.sh
+1
+2
+3
+4
+5
+bmscecse@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/LAB5$ cat numprint1_5.sh
+#!/bin/sh
+
+# print numbers from 1 to 5
+
+i=1
+while [ $i -le 5 ]
+do 
+echo $i
+i=$((i+1))
+done
+bmscecse@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/LAB5$  nano evenSum.sh
+bmscecse@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/LAB5$ sh evenSum.sh
+enter n: 7
+evenSum.sh: 13: Syntax error: "do" unexpected (expecting "then")
+bmscecse@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/LAB5$ nano evenSum.sh
+bmscecse@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/LAB5$ sh evenSum.sh
+enter n: 7
+Sum of even numbers: 0
+Sum of even numbers: 2
+Sum of even numbers: 6
+Sum of even numbers: 12
+bmscecse@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/LAB5$ nano evenSum.sh
+bmscecse@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/LAB5$ sh evenSum.sh
+enter n: 6
+Sum of even numbers: 12
+bmscecse@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/LAB5$ sh evenSum.sh
+enter n: 4
+Sum of even numbers: 6
+bmscecse@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/LAB5$ cat evenSum.sh
+#!/bin/sh
+
+#sum of even numbers upto n
+
+echo "enter n: \c"
+read n
+
+sum=0
+i=0
+while [ $i -le $n ]
+do
+ 
+sum=$((sum+i))
+i=$((i+2))
+done
+echo "Sum of even numbers: $sum"
+#!/bin/sh
+
+# print numbers from 1 to 5
+
+i=1
+while [ $i -le 5 ]
+do 
+echo $i
+i=$((i+1))
+done
